@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",  # Django REST framework
+    "AdministrationSite.module",
+    "AdministrationSite.role",
+    "AdministrationSite.user",
+    "AdministrationSite.audit",
+    "AdministrationSite.function",
 ]
 
 MIDDLEWARE = [
