@@ -23,7 +23,7 @@ urlpatterns = [
     # API    
     path("api/", include("Api.urls")),
     # AdministrationSite
-    path("administration-site/example/", include("AdministrationSite.example.urls")),
+    # path("administration-site/example/", include("AdministrationSite.example.urls")),
     
    
 ]

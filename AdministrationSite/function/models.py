@@ -6,3 +6,11 @@ class Function(models.Model):
     status = models.BooleanField(default=True)
     
     module_id = models.ForeignKey(Module, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        db_table = 'sec_function'
+        verbose_name = 'Function'
+        verbose_name_plural = 'Functions'
