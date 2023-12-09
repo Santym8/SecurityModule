@@ -19,3 +19,14 @@ class User(models.Model):
         db_table = 'sec_user'
         verbose_name = 'User'
         verbose_name_plural = 'Users'
+
+    def check_utn_credentials(self, password):
+        return self.password == password
+    
+    def get_all_functionalities(self):
+        functionalities = []
+        for role in self.roles.all():
+            for functionality in role.functions.all():
+                functionalities.append(functionality.name)
+           
+        return functionalities
