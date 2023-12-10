@@ -9,8 +9,8 @@ class Audit(models.Model):
     ip = models.CharField(max_length=16)
     date = models.DateTimeField()
 
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    function_id = models.ForeignKey(Function, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    function = models.ForeignKey(Function, on_delete=models.CASCADE, blank=True, null=True)
 
 
     def __str__(self):
