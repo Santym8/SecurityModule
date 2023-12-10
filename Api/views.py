@@ -71,15 +71,12 @@ def register_audit(request):
             }, 
             status=400
         )
-    
-    if "function_name" in audit_request.data:
-        function = Function.objects.filter(name=audit_request.data["function_name"])
-        if function.count() == 0:
-            return Response({"message":"Function not found"}, status=404)
-        function = function.first()
-    else:
-        function = None
 
+    function = Function.objects.filter(name=audit_request.data["function_name"])
+    if function.count() == 0:
+        return Response({"message":"Function not found"}, status=404)
+    function = function.first()
+  
     audit = Audit(
         action=audit_request.data["action"],
         description=audit_request.data["description"],
