@@ -4,8 +4,8 @@ from ..role.models import Role
 # Create your models here.
 class User(models.Model):
     username = models.CharField(max_length=16,primary_key=True)
-    email = models.EmailField()
-    dni = models.CharField(max_length=20)
+    email = models.EmailField(unique=True)
+    dni = models.CharField(max_length=20, unique=True)
     password = models.CharField(max_length=16)
     status = models.BooleanField(default=True)
 
